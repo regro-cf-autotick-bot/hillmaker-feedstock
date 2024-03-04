@@ -1,5 +1,5 @@
 {% set name = "hillmaker" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hillmaker-{{ version }}.tar.gz
-  sha256: 762b02016b358f537f698a2ee1348a8fcf0df505d70c9c3fa05f825f6c7e19b4
+  sha256: f2f144eb442336e3882fb68d4cf5420c3eca95e7fc57e5b2fe2a5fd5418c3245
 
 build:
   entry_points:
