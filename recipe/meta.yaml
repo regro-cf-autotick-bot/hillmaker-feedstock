@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hillmaker-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hillmaker-{{ version }}.tar.gz
   sha256: 762b02016b358f537f698a2ee1348a8fcf0df505d70c9c3fa05f825f6c7e19b4
 
 build:
@@ -14,14 +14,14 @@ build:
     - hillmaker=hillmaker.console:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - pandas >=2.0.0
     - numpy >=1.22
     - tomli >=2.0.1
@@ -39,6 +39,7 @@ test:
     - hillmaker --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: http://github.com/misken/hillmaker/
